@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		// var a = 20;
+		// var b = 30;
+		// var c = a+b;
+		// var d = c-a;
+		// var e = a*b;
+		// var f = a/b;
+		// document.write("Addition : "+c);
+		// document.write("<br/>Substraction : " + d); 
+		// document.write("<br/>Muliplication : " + e);
+		// document.write("<br/>Division : " + f);   
+
+		var a = 30;
+		function checkScope() {
+			x = a + 10;
+			document.write("Within Function:" + a);
+		} 
+			document.write("outside Function:" + a);
+
+	</script>
+</head>
+<body onload="checkScope()">
+
+</body>
+</html>
