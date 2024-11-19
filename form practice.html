@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Form</title>
+	<style type="text/css">
+		span{
+			color: red;
+		}
+	</style>
+	<script type="text/javascript">
+		function checkFname() {
+			var f = document.frm.fname.value;
+			var reg = /^[A-Za-z]+$/;
+			if (f=="") {
+				document.getElementById("fname").innerHTML="Please Enter Your Name";
+			}
+			else if (!reg.test(f)) {
+				document.getElementById("fname").innerHTML="Please Enter only Alpabets";
+			}
+			else {
+				document.getElementById("fname").innerHTML=""
+			}
+		}
+	</script>
+</head>
+<body>
+	<form name="frm">
+		<div>
+			<label>First Name</label>
+			<input type="text" name="fname" onblur="checkFname()">
+			<span id="fname"></span>
+		</div>
+		<div>
+			<label>Last Name</label>
+			<input type="text" name="lname">
+			<span id="lname"></span>
+		</div>
+		<div>
+			<label>Email</label>
+			<input type="text" name="email">
+			<span id="email"></span>
+		</div>
+		<div>
+			<label>Mobile Number</label>
+			<input type="text" name="mnumber">
+			<span id="mnumber"></span>
+		</div>
+		<div>
+			<label>Password</label>
+			<input type="text" name="password">
+			<span id="password"></span>
+		</div>
+		<div>
+			<label>Confirm Password</label>
+			<input type="text" name="cpassword">
+			<span id="cpassword"></span>
+		</div>
+		<div>
+			<input type="submit" value="SUBMIT">
+		</div>
+	</form>
+</body>
+</html>
