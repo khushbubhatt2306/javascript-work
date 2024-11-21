@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		var sname = prompt("Enter Student Name: ");
+		var rno = parseInt(prompt("Enter Student Roll No: "));
+		var s1 = parseInt(prompt("Enter Marks of Subject one: "));
+		var s2 = parseInt(prompt("Enter Marks of Subject two: "));
+		var s3 = parseInt(prompt("Enter Marks of Subject three: "));
+		var s4 = parseInt(prompt("Enter Marks of Subject four: "));
+		var s5 = parseInt(prompt("Enter Marks of Subject five: "));
+		var total = s1+s2+s3+s4+s5;
+		var per = total/5;
+
+		document.write("<br> Student Name : "+sname);
+		document.write("<br> Student Roll No : "+rno);
+		document.write("<br> Student's Subject Total : "+total);
+		document.write("<br> Student's Percentage : "+per);
+
+		if (per>70){
+			document.write("<br>Distriction");
+		}
+		else if(per>60){
+			document.write("<br>First Class");
+		}
+		else if(per>50){
+			document.write("<br>Second Class");
+		}
+		else if(per>40){
+			document.write("<br>Pass");
+		}
+		else {
+			document.write("<br>Fail");
+		}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

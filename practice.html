@@ -63,6 +63,34 @@
 				document.getElementById("mnumber").innerHTML=""
 			}
 		}
+		function checkPassword(){
+			
+			var f=document.frm.password.value;
+			var reg=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+			if(f==""){
+				document.getElementById("password").innerHTML="Please Enter Password";
+			}else if(!reg.test(f)){
+				document.getElementById("password").innerHTML="Min 1 Upper, Lower, Numeric & Special(8,15)";
+			}
+			else{
+				document.getElementById("password").innerHTML="";
+			}
+		}
+		function checkCPassword(){
+			
+			var p1=document.frm.password.value;
+			var p2=document.frm.cpassword.value;
+			
+			if(p2==""){
+				document.getElementById("cpassword").innerHTML="Please Enter Confirm Password";
+			}else if(p1!=p2){
+				document.getElementById("cpassword").innerHTML="Password & Confirm Password Does Not Matched";
+			}
+			else{
+				document.getElementById("cpassword").innerHTML="";
+			}
+		}
+
 	</script>
 </head>
 
@@ -91,12 +119,12 @@
 			</tr>
 			<tr>
 				<td>Password</td>
-				<td><input type="text" name="password"></td>
+				<td><input type="text" name="password" onblur="checkPassword()"></td>
 				<td><span id="password"></span></td>
 			</tr>
 			<tr>
 				<td>Confirm Password</td>
-				<td><input type="text" name="cpassword"></td>
+				<td><input type="text" name="cpassword" onblur="checkCPassword()"></td>
 				<td><span id="cpassword"></span></td>
 			</tr>
 			<tr>
