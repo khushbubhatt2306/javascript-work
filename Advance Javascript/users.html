@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">City</th>
+            <th scope="col">Phone number</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <!-- <script>
+      fetch("https://dummyjson.com/users", {
+        method: "GET",
+      })
+        .then((data) => {
+          return data.json();
+        })
+        .then((data) => {
+          console.log(data.users);
+          let users = data.users.map((users) => {
+            console.log(users);
+            let userdata = document.querySelector("tbody");
+            let user_data = `
+              <tr>
+                <td>${users.id}</td>
+                <td>${users.firstName}</td>
+                <td>${users.lastName}</td>
+                <td>${users.email}</td>
+                <td>${users.address.city}</td>
+                <td>${users.phone}</td>
+              </tr>
+            `;
+            userdata.innerHTML += user_data;
+          });
+        });
+    </script> -->
+    <!-- mock api -->
+    <script>
+      const getusers = async () => {
+        const responce = await axios.get("https://dummyjson.com/users");
+        console.log(responce);
+        console.log(responce.data);
+        let user = responce.data.users.map((users) => {
+          console.log(users);
+          let userdata = document.querySelector("tbody");
+          let user_data = `
+              <tr>
+                <td>${users.id}</td>
+                <td>${users.firstName}</td>
+                <td>${users.lastName}</td>
+                <td>${users.email}</td>
+                <td>${users.address.city}</td>
+                <td>${users.phone}</td>
+              </tr>
+          `;
+          userdata.innerHTML += user_data;
+        });
+      };
+      getusers();
+    </script>
+  </body>
+</html>

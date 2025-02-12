@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      fetch("data1.json", {
+        method: "GET",
+      })
+        .then((data) => {
+          return data.json();
+        })
+        .then((data) => {
+          console.log(data);
+
+          console.log("Admin Data: ", data.admin);
+          data.admin.forEach((admin) => {
+            console.log(admin);
+            document.write(
+              `ID:- ${admin.id}, Name:- ${admin.name}, Email ID:- ${admin.email}, Password:- ${admin.password} <br>`
+            );
+          });
+
+          console.log("Users Data:- ", data.users);
+          data.users.forEach((users) => {
+            console.log(users);
+            document.write(
+              `ID:- ${users.id}, Name:- ${users.name}, Email ID:- ${users.email}, Password:- ${users.password} <br>`
+            );
+          });
+        });
+    </script>
+  </body>
+</html>

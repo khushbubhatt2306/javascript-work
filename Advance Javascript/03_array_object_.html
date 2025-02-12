@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1) array in array 
+    2) object in object 
+    3) array in object (print)
+    4) object in array (print) -->
+
+    <script>
+        // array in object
+        let person = {
+            name : "John",
+            age : 25,
+            hobbies: ["Reading", "Dancing", "Coding"]
+        }
+        console.log(person.hobbies[2])
+        // console.log(person)
+        // document.write(person.name,"<br>")
+        // document.write(person.hobbies)
+
+        person.hobbies.forEach(hobby => {
+            console.log(hobby)
+            document.write(hobby,"<br>")
+        });
+
+        //object in array
+        let arr = [
+            {id: 1 , name: "Khushbu"},
+            {id: 2 , name: "Zil"},
+            {id: 3 , name: "Shweta"}
+        ]
+        console.log(arr)
+        // document.write(arr.name)
+
+        arr.forEach(Object => {
+            console.log(Object)
+            document.write(Object.id," :- ", Object.name, "<br>")
+        });
+
+       
+
+        
+    </script>
+</body>
+</html>

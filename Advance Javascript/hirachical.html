@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class A {
+            x() {
+                console.log("This Property is Parent Property!!");
+            }
+        }
+        class B extends A {
+            Y() {
+                console.log("This Property is Child Property1!!");
+            }
+        }
+        class C extends A {
+            Z() {
+                console.log("This Property is Child Property2!!");
+            }
+        }
+
+        
+        const ab = new B;
+        ab.x()
+        ab.Y()
+        const ac = new C;
+        ac.Z()
+        ac.x()
+    </script>
+</body>
+</html>
