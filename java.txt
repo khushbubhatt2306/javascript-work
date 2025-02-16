@@ -1,0 +1,10 @@
+varibale is a dataname and it is used to store the data value.
+rules of varibles
+1 - variable name must start with an alphabeats.
+2 - Uppercase and lowercase are significant.
+3 - Keyword is not allowed as a variblename.
+4 - Space is not allowed bettwen variablename.
+
+ASCII : American Standard Code for Information Interchange
+A-Z : 65 to 90
+a-z : 97 to 122

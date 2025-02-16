@@ -1,0 +1,12 @@
+$ git clone folder link
+$ cd folder name/
+$ git status
+$ git add .
+$ git commit -m "21-11-2024"
+$ git push
+
+=======
+git status
+git add .
+git commit -m ""
+git push / git push -u origin main

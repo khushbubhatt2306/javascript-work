@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infinite Scroll</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+      }
+      .item {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="item-list"></div>
+    </div>
+
+    <script>
+      // References to the list container
+      const itemList = document.getElementById("item-list");
+
+      // Function to create new items
+      function createItems(start, count) {
+        const fragment = document.createDocumentFragment();
+        for (let i = start; i < start + count; i++) {
+          const item = document.createElement("div");
+          item.className = "item";
+          item.textContent = `Item ${i}`;
+          fragment.appendChild(item);
+        }
+        itemList.appendChild(fragment);
+      }
+
+      // Load initial items
+      let currentItem = 1;
+      const batchSize = 20;
+      createItems(currentItem, batchSize);
+
+      // Infinite scroll logic
+      window.addEventListener("scroll", () => {
+        const { scrollTop, scrollHeight, clientHeight } =
+          document.documentElement;
+        if (scrollTop + clientHeight >= scrollHeight - 10) {
+          // Close to the bottom
+          createItems(currentItem, batchSize);
+          currentItem += batchSize;
+        }
+      });
+    </script>
+  </body>
+</html>

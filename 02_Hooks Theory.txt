@@ -1,0 +1,62 @@
+Question 1: What are React hooks? How do useState() and useEffect() hooks work in
+functional components?
+=>React hooks are special functions that allow you to add state and side effects to functional components. Before hooks, functional components were stateless, but with hooks, they can manage state, perform lifecycle actions, and much more, just like class components.
+Some of the most commonly used hooks are:
+useState()
+useEffect()
+useContext()
+useRef()
+
+useState(): Adds state to functional components. It provides the current state value and a function to update it.
+useEffect(): Handles side effects in functional components (like data fetching or timers). It runs after the component renders and can run only once or whenever specified values change.
+
+Question 2: What problems did hooks solve in React development? Why are hooks
+considered an important addition to React?
+=>Hooks in React solved several problems like managing state and side effects in functional components, which were previously only possible in class components. They simplify code, reduce the need for complex class syntax, and allow developers to reuse logic easily with custom hooks. Hooks like useState and useEffect make components cleaner and more powerful. -> They are considered an important addition because they make React development simpler, more efficient, and encourage a functional approach to building apps.
+
+Question 3: What is useReducer ? How we use in react app?
+=>useReducer is a React hook that helps manage complex state logic in a component. It's similar to useState, but it’s used when state updates are more complicated, such as when state depends on previous values or involves multiple actions. You define a reducer function to handle state changes and pass it to useReducer to manage state updates. 
+-> It's useful when you need more control over how state is updated, similar to how Redux works.
+example:
+const [state, dispatch] = useReducer(reducer, initialState);
+
+Question 4: What is the purpose of useCallback & useMemo Hooks?
+=>useCallback: It returns a memoized version of a function, preventing unnecessary re-creations of the function on every render. This is useful when passing functions to child components to avoid unnecessary re-renders.
+
+useMemo: It returns a memoized value and only recomputes it when specific dependencies change. This is helpful for expensive calculations or operations that don't need to be re-executed on every render.
+
+Question 5: What’s the Difference between the useCallback & useMemo Hooks?
+=>useCallback: It is used to memoize functions, so the function doesn't get recreated on every render unless its dependencies change.
+
+useMemo: It is used to memoize values (like the result of an expensive calculation), so the value is recalculated only when its dependencies change.
+
+Question 6 : What is useRef ? How to work in react app?
+=>useRef is a React hook that allows you to store a reference to a DOM element or a value that doesn't change between re-renders. It’s mainly used for accessing DOM elements (like focusing an input field) or storing values that don’t need to trigger re-renders. The reference is persistent, meaning it stays the same across renders.
+
+-> How to work in react app?
+To use useRef in a React app, follow these simple steps:
+
+Create a ref: Use the useRef() hook to create a reference that you can attach to a DOM element or store a value.
+Attach the ref: Add ref={myRef} to a DOM element (like an input or button) to link it to the reference.
+Access the ref: You can access the referenced DOM element or value via myRef.current.
+example:
+import React, { useRef } from 'react';
+
+function FocusInput() {
+  const inputRef = useRef(null);
+
+  const handleFocus = () => {
+    // Focus the input element using the ref
+    inputRef.current.focus();
+  };
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" />
+      <button onClick={handleFocus}>Focus Input</button>
+    </div>
+  );
+}
+
+export default FocusInput;
+
